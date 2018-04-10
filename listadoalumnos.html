@@ -1,0 +1,28 @@
+<!-- LISTADO DE ALUMNOS -->
+<div class="col-sm-12" ng-hide="listadoalumnos">
+    <h1 class="pull-left">Listado de Alumnos</h1>
+    
+    <p class="pull-right">
+        <br /><a class="btn btn-primary" href="#guardar">
+        <span class="glyphicon glyphicon-plus"></span> Agregar Alumno</a>
+    </p>
+    
+    <div class="clearfix"></div>
+    
+    <table class="table table-striped table-hover">
+        <tr class="text-center">
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Acciones</th>
+        </tr>
+        <tr ng-repeat="alumno in alumnos | orderBy:'nombre'">
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.apellidopaterno }}</td>
+            <td>{{ alumno.apellidomaterno }}</td>
+            <td>
+                <a class="btn btn-default" href="#editar/{{ alumno.id }}">Editar <span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-danger" href="#eliminar/{{ alumno.id }}">Eliminar <span class="glyphicon glyphicon-trash"></span></a></td>
+        </tr>
+    </table>
+</div><!-- FIN DE LA COMLUMNA -->

@@ -1,0 +1,38 @@
+<!-- EDITAR ALUMNO -->
+<div class="col-sm-12">
+    <h1 class="pull-left">Editar Alumno</h1>
+    
+    <p class="pull-right">
+        <br /><a class="btn btn-primary" href="#/"><span class="glyphicon glyphicon-arrow-left"></span> Volver</a>
+    </p>
+    
+    <div class="clearfix"></div>
+    
+    <br />
+    <div class="alert alert-danger text-center" role="alert" ng-show="mensajeerror">
+        <span class="glyphicon glyphicon-exclamation-sign"></span> Error, no se agrego al alumno, bebe.
+    </div>
+    <div class="alert alert-danger text-center" role="alert" ng-show="mensajeerrorvalidacion">
+        <span class="glyphicon glyphicon-exclamation-sign"></span> Alguno de los campos esta vacio, revisa por favor.
+    </div>
+    
+    <form name="agregaralumnofrm" data-toggle="validator" role="form">                   
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" placeholder="Nombre" ng-model="nombre" name="nombre" required="true" ng-required="true" ng-minlength="1" ng-maxlength="50" ng-trim="true" required autofocus>
+      </div>
+      <div class="form-group">
+        <label>Apellido Paterno</label>
+        <input type="text" class="form-control" placeholder="Apellido Paterno" ng-model="apellidopaterno" name="apellidopaterno" placeholder="Nombre" required="true" ng-required="true" ng-minlength="1" ng-maxlength="50" ng-trim="true" required>
+      </div>
+      <div class="form-group">
+        <label>Apellido Materno</label>
+        <input type="text" class="form-control" placeholder="Apellido Materno" ng-model="apellidomaterno" name="apellidomaterno" required="true" ng-required="true" ng-minlength="1" ng-maxlength="50" ng-trim="true" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" ng-click="editaralumno()">
+            Guardar <span class="glyphicon glyphicon-floppy-disk"></span>
+        </button>
+      </div>
+    </form>
+</div><!-- FIN DE LA COLUMNA -->
